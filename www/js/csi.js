@@ -328,10 +328,7 @@ function getFunctionalComments(parentNode) {
     if (isFunctionalComment(node)) {
       funcComments.push(node);
     } else if (node.hasChildNodes()) {
-      let childNodesComments = getFunctionalComments(node);
-      for (let comment of childNodesComments) {
-        funcComments.push(comment);
-      }
+      funcComments = [...funcComments, ...getFunctionalComments(node)];
     }
   }
 
