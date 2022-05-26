@@ -1,0 +1,79 @@
+@import '../config';
+
+/* ================= */
+/* ----- ХЭДЕР ----- */
+/* ================= */
+.header {
+  background: var(--header-primary-bg);
+  background: var(--header-gradient-bg);
+  overflow: hidden;
+  box-shadow: var(--shadow-inset);
+
+  &__container {
+    display: grid;
+    grid-template-areas:
+      "logo buttons"
+      "navbar navbar";
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+
+    @include media-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+    }
+  }
+
+  &__logo {
+    margin: 0.75em 0;
+    grid-area: logo;
+    justify-self: start;
+    // pointer-events: none;
+
+    @include media-desktop {
+      order: 1;
+    }
+  }
+
+  &__navbar {
+    grid-area: navbar;
+    min-width: 100%;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0 -10%;
+
+    @include media-desktop {
+      padding: 0;
+      order: 2;
+      margin: 0 0 0 auto;
+      min-width: unset;
+      max-height: unset;
+    }
+  }
+
+  &__buttons {
+    display: inline-flex;
+    gap: 0.75em;
+    grid-area: buttons;
+    justify-self: end;
+    align-items: center;
+
+    @include media-desktop {
+      order: 3;
+    }
+
+    & > .icon-button {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+#js-button__header-navbar {
+  display: block;
+
+  @include media-desktop {
+    display: none;
+  }
+}

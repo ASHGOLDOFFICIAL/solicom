@@ -1,0 +1,109 @@
+/* ================== */
+/* ----- КНОПКИ ----- */
+/* ================== */
+.button {
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s;
+  background: var(--button-primary-default-bg);
+  color: var(--button-primary-default-text);
+
+  & > .button__icon {
+    filter: var(--icon-primary-default);
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--button-primary-hover-bg);
+    color: var(--button-primary-hover-text);
+
+    & > .button__icon {
+      filter: var(--icon-primary-hover);
+    }
+  }
+
+  &:active {
+    background: var(--button-primary-active-bg);
+    color: var(--button-primary-active-text);
+    outline: 1px solid var(--border-primary);
+
+    & > .button__icon {
+      filter: var(--icon-primary-active);
+    }
+  }
+
+  &__icon {
+    pointer-events: none;
+    vertical-align: middle;
+    transition: filter 0.2s;
+  }
+
+  &__text {
+    vertical-align: middle;
+    margin-left: 0.25em;
+    font-size: 1rem;
+  }
+}
+
+.button--alternative {
+  @extend .button;
+  background: var(--button-secondary-default-bg);
+  color: var(--button-secondary-default-text);
+
+  & > .button__icon {
+    filter: var(--icon-secondary-default);
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--button-secondary-hover-bg);
+    color: var(--button-secondary-hover-text);
+
+    & > .button__icon {
+      filter: var(--icon-secondary-hover);
+    }
+  }
+
+  &:active {
+    background: var(--button-secondary-active-bg);
+    color: var(--button-secondary-active-text);
+
+    & > .button__icon {
+      filter: var(--icon-secondary-active);
+    }
+  }
+}
+
+.icon-button {
+  background: transparent;
+  transition: filter 0.3s;
+
+  & > .button__icon {
+    filter: var(--icon-primary-default);
+  }
+
+  &:hover > .button__icon,
+  &:focus > .button__icon {
+    filter: var(--icon-primary-hover);
+  }
+
+  &:active > .button__icon {
+    filter: var(--icon-primary-active);
+  }
+}
+
+.icon-button--alternative {
+  @extend .icon-button;
+
+  & > .button__icon {
+    filter: var(--icon-secondary-default);
+  }
+
+  &:hover > .button__icon,
+  &:focus > .button__icon {
+    filter: var(--icon-secondary-hover);
+  }
+
+  &:active > .button__icon {
+    filter: var(--icon-secondary-active);
+  }
+}

@@ -1,0 +1,57 @@
+@import 'config';
+@import 'reset';
+@import 'typography';
+@import 'preferences';
+@import 'document-page';
+
+/* ================= */
+/* ----- ОБЩЕЕ ----- */
+/* ================= */
+:root {
+  font-family: "montserrat", "century gothic", "verdana", "helvetica", "arial", "sans-serif";
+}
+
+body {
+  background: var(--background-primary);
+  color: var(--text-primary);
+
+  &::before {
+    content: "";
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 1;
+    position: fixed;
+    display: none;
+  }
+
+  &.--lock,
+  &.--mobile-lock {
+    overflow: hidden;
+
+    &::before {
+      display: block;
+    }
+  }
+  
+  &.--mobile-lock {
+    overflow: auto;
+
+    &::before {
+      @include media-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+@import 'blocks/buttons';
+@import 'blocks/header';
+@import 'blocks/logo';
+@import 'blocks/navbar';
+@import 'blocks/hamburger-button';
+@import 'blocks/content';
+@import 'blocks/footer';
+@import 'blocks/settings';
+@import 'blocks/gallery';

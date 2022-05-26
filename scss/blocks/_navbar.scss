@@ -1,0 +1,50 @@
+/* ================== */
+/* ----- НАВБАР ----- */
+/* ================== */
+.navbar {
+  &.--open {
+    max-height: 12rem;
+    transition: max-height 0.5s;
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include media-desktop {
+      flex-direction: row;
+      gap: 0.5em;
+      height: 2.5rem;
+      align-items: center;
+      border-radius: 1em;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0.8em 1em;
+    text-align: center;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-secondary);
+    background: var(--button-secondary-default-bg);
+    color: var(--button-secondary-default-text);
+    transition: background 0.3s, color 0.3s;
+
+    @include media-desktop {
+      height: 100%;
+      border-radius: 1em;
+      border: none;
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--button-secondary-hover-bg);
+      color: var(--button-secondary-hover-text);
+    }
+
+    &:active {
+      background: var(--button-secondary-active-bg);
+      color: var(--button-secondary-active-text);
+    }
+  }
+}

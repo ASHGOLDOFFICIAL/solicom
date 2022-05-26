@@ -1,0 +1,36 @@
+/* ================ */
+/* ----- ЛОГО ----- */
+/* ================ */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+  gap: 1em;
+  height: 2.75rem;
+
+  &__image {
+    height: 100%;
+
+    & > img {
+      filter: var(--logo);
+      object-fit: scale-down;
+    }
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+
+  &__title {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-secondary);
+  }
+}

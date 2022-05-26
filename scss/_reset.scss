@@ -1,0 +1,60 @@
+/* ================= */
+/* ----- СБРОС ----- */
+/* ================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100vh;
+  height: 100%;
+  line-height: 1;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+}
+img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+details summary {
+  cursor: pointer;
+}
+
+/* ==================== */
+/* ----- АНИМАЦИИ ----- */
+/* ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

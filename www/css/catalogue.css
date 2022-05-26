@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/* ================= */
+/* ----- ОБЩЕЕ ----- */
+/* ================= */
+.main-wrapper {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+/* =========================== */
+/* ----- ПУТЬ К СТРАНИЦЕ ----- */
+/* =========================== */
+.breadcrumb {
+  background: var(--background-secondary);
+  border: solid var(--border-primary);
+  border-width: 1px 0;
+}
+
+.breadcrumb__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25em;
+  height: 2.25rem;
+}
+
+.breadcrumb__location {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.breadcrumb__location--current {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+.breadcrumb .icon-button--alternative {
+  height: 100%;
+  padding: 0.45em;
+}
+
+/* =================== */
+/* ----- КАТАЛОГ ----- */
+/* =================== */
+.catalogue {
+  z-index: 2;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  background: var(--background-secondary);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  padding: 2rem 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .catalogue {
+    z-index: 0;
+    padding: 0;
+    position: static;
+    -webkit-transform: none;
+            transform: none;
+    background: none;
+  }
+}
+
+.catalogue.--open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  -webkit-box-shadow: var(--shadow-big);
+          box-shadow: var(--shadow-big);
+}
+
+@media screen and (min-width: 768px) {
+  .catalogue.--open {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+.catalogue__author-block {
+  margin-bottom: 0.75em;
+}
+
+.catalogue__author-block[open] {
+  margin-bottom: 1.25em;
+}
+
+.catalogue__author-block-name {
+  margin-bottom: 0.5em;
+  padding: 0 0.75em;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .catalogue__author-block-name {
+    color: var(--text-primary);
+  }
+}
+
+.catalogue__author-block-name span {
+  display: none;
+}
+
+.catalogue__art-block {
+  border-radius: 0.75em;
+}
+
+@media screen and (min-width: 768px) {
+  .catalogue__art-block {
+    -webkit-box-shadow: var(--shadow-small);
+            box-shadow: var(--shadow-small);
+  }
+}
+
+.catalogue__art-block-name {
+  padding: 0 0.75em;
+  background: var(--background-secondary);
+  padding: 0.25em 0.75em;
+  font-weight: 400;
+  background: var(--background-tertiary);
+}
+
+.catalogue__title {
+  padding: 0 0.75em;
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+  padding: 0.25em 0.75em;
+  display: block;
+  background: var(--background-quaternary);
+}
+
+.catalogue__title:hover {
+  text-decoration: underline;
+}
+
+.catalogue .icon-button {
+  width: 1.875rem;
+  height: 1.875rem;
+  float: right;
+  margin-left: 0.75em;
+  padding: 0.15em;
+}
+
+.js-button__catalogue-navbar {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .js-button__catalogue-navbar {
+    display: none;
+  }
+}
+
+#js-catalogue__searchbar {
+  border-radius: 1em;
+  height: 2rem;
+  border: 1px solid var(--border-primary);
+  padding: 0.75em;
+  color: var(--text-primary);
+  margin-bottom: 1em;
+  width: 14rem;
+  background: var(--background-secondary-field);
+}
+
+@media screen and (min-width: 768px) {
+  #js-catalogue__searchbar {
+    background: var(--background-primary-field);
+  }
+}
+
+/* ================================ */
+/* ----- ВИЗУАЛЬНЫЕ ДЕКОРАЦИИ ----- */
+/* ================================ */
+/* закругляет рамку первому элементу, следующему после имени автора */
+.catalogue__art-block:first-of-type > summary {
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
+}
+
+/* закругляет рамку последнему элементу, следующему после имени автора */
+.catalogue__art-block:last-of-type > summary {
+  border-bottom-left-radius: 0.75em;
+  border-bottom-right-radius: 0.75em;
+}
+
+/* если группа открывается, то у неё убирается нижнее закругление */
+.catalogue__art-block[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* если группа открывается, то у последнего элемента группы закругляется нижняя рамка и добавляется отступ*/
+.catalogue__art-block[open] .catalogue__title:last-of-type {
+  border-bottom-left-radius: 0.75em;
+  border-bottom-right-radius: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+/* если группа открывается, то у последующей группы закругляются верхняя рамка*/
+.catalogue__art-block[open] + .catalogue__art-block > summary {
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
+}
+/*# sourceMappingURL=catalogue.css.map */

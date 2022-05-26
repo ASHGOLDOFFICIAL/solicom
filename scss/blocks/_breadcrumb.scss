@@ -1,0 +1,30 @@
+/* =========================== */
+/* ----- ПУТЬ К СТРАНИЦЕ ----- */
+/* =========================== */
+.breadcrumb {
+  background: var(--background-secondary);
+  border: solid var(--border-primary);
+  border-width: 1px 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    height: 2.25rem;
+  }
+
+  &__location {
+    color: var(--accent-primary);
+    font-weight: 600;
+
+    &--current {
+      color: var(--accent-secondary);
+      font-weight: 700;
+    }
+  }
+
+  .icon-button--alternative {
+    height: 100%;
+    padding: 0.45em;
+  }
+}

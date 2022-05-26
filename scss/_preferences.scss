@@ -1,0 +1,258 @@
+/* HEX COLORS */
+$black: #000;
+$jet: #2e2e2e;
+$onyx: #3b3b3b;
+$davys-grey: #474747;
+$dim-gray: #696969;
+$battleship-grey: #858585;
+$spanish-gray: #999;
+$silver-chalice: #acacac80;
+$light-gray: #cdcdcd;
+$gainsboro: #dbdbdb;
+$platinum: #e4e4e4;
+$cultured: #f0f0f0;
+$white: #fff;
+
+/* colors for default themes */
+$bright-navy-blue: #0070cc;
+$teal: #008080;
+$robin-egg-blue: #00cccc;
+$dark-cyan: #019090;
+$turquoise: #05ddcc;
+$pine-green: #157065;
+$xiketic: #1c0f1c;
+$middle-blue-green: #85c5c5;
+$lavender-floral: #4e4d50;
+
+/* colors for icy theme */
+$prussian-blue: #00324d;
+$oh--prussian-blue: #00324d80;
+$rich-black-fogra-29: #011222;
+$blue-sapphire: #065f81;
+$celadon-blue: #3381a8;
+$air-superiority-blue: #77a0bc;
+$oh--air-superiority-blue: #77a0bc80;
+$columbia-blue: #b1d2e3;
+$azure-x-11-web-color: #def3f6;
+
+/* FILTER COLORS */
+:root {
+  /* universal colors */
+  --f--black: none;
+  --f--eerie-black: invert(8%) sepia(0) saturate(12%) hue-rotate(137deg) brightness(104%) contrast(92%);
+  --f--jet: invert(14%) sepia(37%) saturate(0) hue-rotate(266deg) brightness(91%) contrast(89%);
+  --f--light-gray: invert(91%) sepia(0%) saturate(158%) hue-rotate(191deg) brightness(98%) contrast(77%);
+  --f--gainsboro: invert(99%) sepia(7%) saturate(121%) hue-rotate(192deg) brightness(113%) contrast(72%);
+  --f--platinum: invert(98%) sepia(1%) saturate(585%) hue-rotate(152deg) brightness(111%) contrast(79%);
+  --f--cultured: invert(99%) sepia(23%) saturate(112%) hue-rotate(265deg) brightness(113%) contrast(88%);
+  --f--white: invert(100%) sepia(100%) saturate(0) hue-rotate(288deg) brightness(102%) contrast(102%);
+
+  /* colors for default themes */
+  --f--lavender-floral: invert(55%) sepia(25%) saturate(960%) hue-rotate(220deg) brightness(105%) contrast(100%);
+
+  /* colors for icy theme */
+  --f--prussian-blue: invert(9%) sepia(84%) saturate(3112%) hue-rotate(185deg) brightness(94%) contrast(102%);
+  --f--air-superiority-blue: invert(66%) sepia(13%) saturate(882%) hue-rotate(161deg) brightness(90%) contrast(93%);
+  --f--columbia-blue: invert(90%) sepia(5%) saturate(1320%) hue-rotate(170deg) brightness(95%) contrast(90%);
+  --f--azure-x-11-web-color: invert(95%) sepia(11%) saturate(272%) hue-rotate(142deg) brightness(97%) contrast(98%);
+}
+
+
+/* ================ */
+/* ----- ТЕМЫ ----- */
+/* ================ */
+
+:root {
+  color-scheme: light dark;
+  --shadow-big-units: 0 10px 3px 2px;
+  --shadow-small-units: 0 8px 5px 1px;
+  --shadow-inset-units: inset 0 0 10px 10px;
+  --glow-units: 0 0 40px 5px;
+}
+
+@mixin light-theme {
+  --text-primary: #000;
+  --text-secondary: #1b1b1b;
+  --text-tertiary: #fff;
+
+  --header-primary-bg: #01877c;
+  --header-gradient-bg: linear-gradient(90deg, #01877c 10%, #016887,#01875a);
+
+  --header-primary-bg: #018786;
+  --header-secondary-bg: #85c5c5;
+  --background-primary: #e4e4e4;
+  --background-secondary: #dbdbdb;
+  --background-tertiary: #ededed;
+  --background-quaternary: #fff;
+  
+  --border-primary: #999999;
+  --border-secondary: #cdcdcd;
+  
+  --button-primary-default-text: var(--text-secondary);
+  --button-primary-default-bg: #dbdbdb;
+  --icon-primary-default: invert(5%) sepia(0%) saturate(0%) hue-rotate(328deg) brightness(94%) contrast(87%);
+  --button-primary-hover-text: var(--text-primary);
+  --button-primary-hover-bg: #ededed;
+  --icon-primary-hover: invert(44%) sepia(0%) saturate(0%) hue-rotate(61deg) brightness(91%) contrast(87%);
+  --button-primary-active-text: var(--text-primary);
+  --button-primary-active-bg: #fff;
+  --icon-primary-active: invert(98%) sepia(0%) saturate(1042%) hue-rotate(141deg) brightness(71%) contrast(61%);
+  
+  --accent-primary: #008f81;
+  --accent-secondary: #137067;
+  
+  --shadow-color: #b1b1b180;
+  --shadow-big: var(--shadow-big-units) var(--shadow-color);
+  --shadow-small: var(--shadow-small-units) var(--shadow-color);
+  --glow: var(--glow-units) #008f8180;
+  
+  --logo: invert(6%) sepia(0%) saturate(0%) hue-rotate(142deg) brightness(95%) contrast(89%);
+}
+
+@mixin dark-theme {
+  --accent-primary: #03dac5;
+  --accent-secondary: #bb86fc;
+  
+  --text-primary: #fff;
+  --text-secondary: #efefef;
+  --text-tertiary: #121212;
+
+  --background-primary: #121212;
+  --background-secondary: #1e1e1e;
+  --background-tertiary: #2e2e2e;
+  --background-quaternary: #333333;
+
+  --border-primary: #777;
+  --border-secondary: $dim-gray;
+  --border-tertiary: $dim-gray;
+
+  --logo: var(--f--lavender-floral);
+  --header-primary-bg: #1d1020;
+  --header-secondary-bg: #1e1e1e;
+  --header-gradient-bg: linear-gradient(90deg, #1d1020 10%, #171020, #121020, #1d1020);
+
+  --icon-primary-default: invert(100%);
+  --icon-primary-hover: invert(80%);
+  --icon-primary-active: invert(60%);
+  --icon-secondary-default: invert(90%);
+  --icon-secondary-hover: var(--f--columbia-blue);
+  --icon-secondary-enabled: $f--light-gray;
+  --icon-secondary-active: var(--f--air-superiority-blue);
+
+  --button-secondary-default-text: var(--text-secondary);
+  --button-secondary-default-bg: #2e2e2e;
+  --button-secondary-hover-text: var(--text-primary);
+  --button-secondary-hover-bg: #2e2e2e;
+  --button-secondary-active-text: var(--text-primary);
+  --button-secondary-active-bg: #333333;
+  --button-secondary-enabled-text: $white;
+  --button-secondary-enabled-bg: $jet;
+  
+  --shadow-color: #0008;
+  --shadow-big: var(--shadow-big-units) var(--shadow-color);
+  --shadow-small: var(--shadow-small-units) var(--shadow-color);
+  --shadow-inset: var(--shadow-inset-units) #00000039;
+  --glow: var(--glow-units) #03dac580;
+}
+
+
+
+
+
+/* ============================= */
+/* ----- КЛАССИЧЕСКИЕ ТЕМЫ ----- */
+/* ============================= */
+
+// Системная тема
+@media screen and (prefers-color-scheme: light) {
+  .t-osdefault {
+    @include light-theme;
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  .t-osdefault {
+    @include dark-theme;
+  }
+}
+
+// Светлая тема
+.t-light {
+  @include light-theme;
+}
+
+// Тёмная тема
+.t-dark {
+  @include dark-theme;
+}
+
+
+
+
+
+/* ======================== */
+/* ----- ЦВЕТНЫЕ ТЕМЫ ----- */
+/* ======================== */
+
+// Ледяная тема */
+$prussian-blue: #00324d;
+$oh--prussian-blue: #00324d80;
+$rich-black-fogra-29: #011222;
+$blue-sapphire: #065f81;
+$celadon-blue: #3381a8;
+$air-superiority-blue: #77a0bc;
+$oh--air-superiority-blue: #77a0bc80;
+$columbia-blue: #b1d2e3;
+$azure-x-11-web-color: #def3f6;
+.t-icy {
+  --text-primary: var(--eerie-black);
+  --text-secondary: #000;
+  --text-tertiary: #fff;
+
+  --header-primary-bg: #011222;
+  --header-secondary-bg: #b1d2e3;
+  --background-primary-field: #b1d2e3;
+  --background-secondary-field: #b1d2e3;
+  --background-primary: #065f81;
+  --background-secondary: #b1d2e3;
+  --background-tertiary: #def3f6;
+  --background-quaternary: #00324d;
+
+  --border-primary: #b1d2e3;
+  --border-secondary: #011222;
+
+  --button-primary-default-text: var(--text-tertiary);
+  --button-primary-default-bg: var(--air-superiority-blue);
+  --icon-primary-default: var(--f--azure-x-11-web-color);
+  --button-primary-hover-text: var(--text-primary);
+  --button-primary-hover-bg: #def3f6;
+  --icon-primary-hover: var(--f--columbia-blue);
+  --button-primary-active-text: var(--text-primary);
+  --button-primary-active-bg: #b1d2e3;
+  --icon-primary-active: var(--f--air-superiority-blue);
+
+  --button-secondary-default-text: var(--text-secondary);
+  --button-secondary-default-bg: var(--air-superiority-blue);
+  --icon-secondary-default: var(--f--prussian-blue);
+  --button-secondary-hover-text: var(--text-primary);
+  --button-secondary-hover-bg: #def3f6;
+  --icon-secondary-hover: var(--f--columbia-blue);
+  --button-secondary-active-text: var(--text-primary);
+  --button-secondary-active-bg: #b1d2e3;
+  --icon-secondary-active: var(--f--air-superiority-blue);
+
+  --accent-primary: ;
+  --accent-secondary: ;
+  --accent-tertiary: ;
+
+  --shadow-color: #00324d;
+  --shadow-big: var(--shadow-big-units) var(--shadow-color);
+  --shadow-small: var(--shadow-small-units) var(--shadow-color);
+  --glow: var(--glow-units) var(--oh--air-superiority-blue);
+
+  --logo: var(--f--azure-x-11-web-color);
+}
+
+
+
+
+

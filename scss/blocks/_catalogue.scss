@@ -1,0 +1,150 @@
+/* =================== */
+/* ----- КАТАЛОГ ----- */
+/* =================== */
+.catalogue {
+  z-index: 2;
+  width: fit-content;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background: var(--background-secondary);
+  transition: transform 0.3s ease-out;
+  padding: 2rem 1rem;
+
+  @include media-desktop {
+    z-index: 0;
+    padding: 0;
+    position: static;
+    transform: none;
+    background: none;
+  }
+
+  &.--open {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in;
+    box-shadow: var(--shadow-big);
+
+    @include media-desktop {
+      box-shadow: none;
+    }
+  }
+
+  &__author-block {
+    margin-bottom: 0.75em;
+
+    &[open] {
+      margin-bottom: 1.25em;
+    }
+
+    &-name {
+      margin-bottom: 0.5em;
+      padding: 0 0.75em;
+      text-transform: capitalize;
+      font-weight: 600;
+    
+      @include media-desktop {
+        color: var(--text-primary);
+      }
+    
+      & span {
+        display: none;
+      }
+    }
+  }
+
+  &__art-block {
+    border-radius: 0.75em;
+
+    @include media-desktop {
+      box-shadow: var(--shadow-small);
+    }
+
+    &-name {
+      padding: 0 0.75em;
+      background: var(--background-secondary);
+      padding: 0.25em 0.75em;
+      font-weight: 400;
+      background: var(--background-tertiary);
+    }
+  }
+
+  &__title {
+    padding: 0 0.75em;
+    background: var(--background-tertiary);
+    color: var(--text-primary);
+    padding: 0.25em 0.75em;
+    display: block;
+    background: var(--background-quaternary);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & .icon-button {
+    width: 1.875rem;
+    height: 1.875rem;
+    float: right;
+    margin-left: 0.75em;
+    padding: 0.15em;
+  }
+}
+
+.js-button__catalogue-navbar {
+  display: block;
+
+  @include media-desktop {
+    display: none;
+  }
+}
+
+#js-catalogue__searchbar {
+  border-radius: 1em;
+  height: 2rem;
+  border: 1px solid var(--border-primary);
+  padding: 0.75em;
+  color: var(--text-primary);
+  margin-bottom: 1em;
+  width: 14rem;
+  background: var(--background-secondary-field);
+
+  @include media-desktop {
+    background: var(--background-primary-field);
+  }
+}
+
+/* ================================ */
+/* ----- ВИЗУАЛЬНЫЕ ДЕКОРАЦИИ ----- */
+/* ================================ */
+/* закругляет рамку первому элементу, следующему после имени автора */
+.catalogue__art-block:first-of-type > summary {
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
+}
+
+/* закругляет рамку последнему элементу, следующему после имени автора */
+.catalogue__art-block:last-of-type > summary {
+  border-bottom-left-radius: 0.75em;
+  border-bottom-right-radius: 0.75em;
+}
+
+/* если группа открывается, то у неё убирается нижнее закругление */
+.catalogue__art-block[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* если группа открывается, то у последнего элемента группы закругляется нижняя рамка и добавляется отступ*/
+.catalogue__art-block[open] .catalogue__title:last-of-type {
+  border-bottom-left-radius: 0.75em;
+  border-bottom-right-radius: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+/* если группа открывается, то у последующей группы закругляются верхняя рамка*/
+.catalogue__art-block[open] + .catalogue__art-block > summary {
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
+}

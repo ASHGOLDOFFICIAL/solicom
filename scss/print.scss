@@ -1,0 +1,14 @@
+body {
+  font-size: 14pt;
+  font-family: "Century Gothic", "Verdana", "Helvetica", "Arial", "sans-serif";
+
+  & > :not(#document-main) {
+    display: none;
+  }
+}
+#document-main > * > :not(main) {
+  display: none;
+}
+main#document-main * {
+  display: block;
+}

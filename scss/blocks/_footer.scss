@@ -1,0 +1,16 @@
+/* ================= */
+/* ----- ФУТЕР ----- */
+/* ================= */
+.footer {
+  text-align: right;
+  font-size: 0.8rem;
+  padding: 1em 1.25em;
+
+  &__info {
+    font-weight: 700;
+  }
+
+  &__copyright {
+    font-style: italic;
+  }
+}

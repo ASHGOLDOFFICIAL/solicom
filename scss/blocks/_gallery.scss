@@ -1,0 +1,17 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2em;
+
+  &__object {
+    width: calc(150px + 2em);
+    flex: 1 1 auto;
+    margin: 0;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 1em;
+  }
+}

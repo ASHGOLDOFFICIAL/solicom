@@ -1,0 +1,17 @@
+@import 'config';
+
+/* ================= */
+/* ----- ОБЩЕЕ ----- */
+/* ================= */
+.main-wrapper {
+  display: block;
+
+  @include media-desktop {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+@import 'blocks/breadcrumb';
+@import 'blocks/catalogue';

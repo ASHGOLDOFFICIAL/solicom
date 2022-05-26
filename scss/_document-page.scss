@@ -1,0 +1,27 @@
+/* ===================== */
+/* ----- СТРУКТУРА ----- */
+/* ===================== */
+#document {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+  min-width: 320px;
+
+  &__header {
+    box-shadow: var(--shadow-small);
+  }
+
+  &__main {
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    background: var(--background-secondary);
+    color: var(--text-secondary);
+  }
+}
+
+.container {
+  max-width: Min(1100px, 90%);
+  margin: 0 auto;
+}
